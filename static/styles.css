@@ -1,0 +1,88 @@
+nav .navbar-brand
+{
+    /* size for brand */
+    font-size: xx-large;
+    font-weight: bold;
+
+
+    /* color for brand */
+    text-shadow: 2px 2px 5px #abcdef;
+}
+
+main .search-title
+{
+    /* Center search header */
+    text-align: center;
+
+}
+
+main .search-bar
+{
+    width: 80%;
+}
+
+main .instructions
+{
+    padding-top: 25px;
+}
+
+main .form-control
+{
+    /* Center form controls */
+    display: inline-block;
+
+    /* Override Bootstrap's 100% width for form controls */
+    width: auto;
+}
+
+main
+{
+    /* Scroll horizontally as needed */
+    overflow-x: auto;
+
+    /* Center contents */
+    text-align: center;
+}
+
+main img
+{
+    /* Constrain images on small screens */
+    max-width: 100%;
+}
+
+.reqlist
+{
+    font-size: 12px;
+}
+
+.search-list
+{
+    column-count: 3;
+    text-align: left;
+}
+
+.save-recipe
+{
+    background-color: pink;
+    border: none;
+    color: black;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    border-radius: 16px;
+}
+
+.delete-recipe
+{
+    background-color: pink;
+    border: none;
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    border-radius: 16px;
+}
+

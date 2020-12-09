@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Saved Recipes
+{% endblock %}
+
+{% block main %}
+
+<h2>Saved Recipes</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Recipe</th>
+                <th scope="col">Ease of Prep</th>
+                <th scope="col">Dish Type</th>
+                <th scope="col">Prep Time</th>
+                <th scope="col">Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for recipe in recipes %}
+            <tr>
+
+                <td><a href="{{recipe.Link}}" target="_blank">{{recipe.Name}}</a></td>
+                <td>{{recipe.Ease_of_Prep}}</td>
+                <td>{{recipe.Type}}</td>
+                <td>{{recipe.Prep_Time}}</td>
+                <td>
+                    <form action="/delete" method="post">
+                        <input type="hidden" id="recipe-id" name="recipe-id" value="{{recipe.recipe_id}}">
+                        <button class="delete-recipe">Delete</button>
+                    </form>
+                </td>
+
+            </tr>
+            {% endfor %}
+
+        </tbody>
+    </table>
+
+{% endblock %}

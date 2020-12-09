@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Search Results
+{% endblock %}
+
+{% block main %}
+
+{% for recipe in recipes %}
+
+<div class="jumbotron">
+  <h1 class="display-4"><a href="{{recipe.Link}}" target="_blank">{{recipe.Name}}</a></h1>
+  <hr class="my-4">
+  <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Ease of Prep</th>
+                <th scope="col">Dish Type</th>
+                <th scope="col">Prep Time</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+
+                <td>{{recipe.Ease_of_Prep}}</td>
+                <td>{{recipe.Type}}</td>
+                <td>{{recipe.Prep_Time}} minutes</td>
+
+            </tr>
+        </tbody>
+    </table>
+
+    {% if session.user_id %}
+        <form action="/saved" method="post">
+            <input type="hidden" id="recipe-id" name="recipe-id" value="{{recipe.recipe_id}}">
+            <button class="save-recipe" style="background-color:pink;">Save</button>
+        </form>
+    {% else %}
+        <button type="button" class="btn btn-secondary" disabled>Log In to Save Recipes</button>
+
+    {% endif %}
+
+</div>
+
+{% endfor %}
+
+{% endblock %}

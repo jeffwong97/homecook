@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Search
+{% endblock %}
+
+{% block main %}
+
+    <h2 class="search-title">Search Recipes by Ingredients</h2>
+    <h5 class="instructions">Type in any ingredients to search, separated by commas (,)</h5>
+    <form action="/search" method="post">
+        <div class="form-group">
+            <input autocomplete="off" autofocus class="search-bar" name="ingredients" placeholder="What's in your kitchen?" type="text">
+        </div>
+        <button class="btn btn-primary" type="submit">Search</button>
+    </form>
+    <h5 class="instructions">Or select any of the ingredients listed below</h5>
+    <form action="/search" method="post">
+        <div class="search-list">
+            {% for ingredient in food %}
+                <input name="{{ingredient.food_name}}" value="{{ingredient.food_name}}" type="checkbox">
+                <label for="{{ingredient.food_name}}">{{ingredient.food_name}}</label><br>
+            {% endfor %}
+        </div>
+        <button class="btn btn-primary" type="submit">Search</button>
+    </form>
+
+
+{% endblock %}
